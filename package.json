@@ -1,7 +1,7 @@
 {
   "name": "ftimer",
   "version": "0.1.0",
-  "description": "NodeJS/Browser advanced timers",
+  "description": "NodeJS/Browser advanced timer",
   "main": "ftimer.js",
   "directories": {
     "test": "test"
