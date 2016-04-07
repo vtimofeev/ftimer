@@ -1,0 +1,36 @@
+{
+  "name": "ftimer",
+  "version": "0.1.0",
+  "description": "NodeJS/Browser advanced timers",
+  "main": "ftimer.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vtimofeev/ftimer.git"
+  },
+  "keywords": [
+    "timer",
+    "bungle",
+    "fast",
+    "setInterval",
+    "counter",
+    "once",
+    "context",
+    "params"
+  ],
+  "author": "vtimofeev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vtimofeev/ftimer/issues"
+  },
+  "homepage": "https://github.com/vtimofeev/ftimer#readme",
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "mocha": "^2.3.4"
+  }
+}
