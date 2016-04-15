@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FTimer</title>
+    <!--<script src="../src/ft/timer.js"></script>-->
+    <script src="../build/ftimer.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+</head>
+
+<body>
+
+<h1>Let's play with <b>ftimer</b></h1>
+
+<div id="container" style="padding: 20px; border: solid 1px gray; font-weight: bold">Isn't inited.</div>
+<br/>
+Change task direction: <button id="reverseBtn">Loading</button>
+<br/>
+Start/stop executing: <button id="startBtn">Loading</button>
+
+<script>
+    var el = $('#container')[0],
+        start = +new Date(),
+        $startBtn = $('#startBtn'),
+        $reverseBtn = $('#reverseBtn'),
+        timer0,
+        timer1;
+
+    timer0 = ftimer.get().then(function(){ el.innerText = 'Inited'; })
+            .delay(1000)
+            .then(function(){ el.innerText = 'After 1s'; })
+            .delay(1000)
+            .then(function(){ el.innerText = 'After 2s'; })
+            .delay(1000)
+            .then(function(){ el.innerText = 'Finish'; })
+            .delay(1000)
+            .loop();
+
+    timer1 = ftimer.get()
+            .then(setStartButtonContent)
+            .then(setReverseButtonContent)
+            .delay(100)
+            .loop();
+
+    $startBtn.click(startButtonHandler);
+    $reverseBtn.click(reverseButtonHandler);
+
+    function setStartButtonContent() {
+        $startBtn.html((timer0.isActive()?'Stop':'Start') + ', current task index ' + timer0.taskIndex);
+    }
+
+    function setReverseButtonContent() {
+        $reverseBtn.html(timer0.forward?'Reverse':'Forward');
+    }
+
+    function startButtonHandler() {
+        timer0.isActive()?timer0.stop():timer0.start();
+        setStartButtonContent();
+    }
+
+    function reverseButtonHandler() {
+        timer0.forward?timer0.forward=false:timer0.forward=true;
+        setReverseButtonContent();
+    }
+
+</script>
+</body>
+</html>

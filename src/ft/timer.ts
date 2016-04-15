@@ -1,3 +1,6 @@
+
+if(typeof exports === 'undefined') var exports = window || {};
+
 export module ft {
 
     var TimerState = {
@@ -160,8 +163,9 @@ export module ft {
             this.nextExecution = this.now + this.getTask().time;
         }
 
-        start():void {
+        start():Timer {
             this.state = TimerState.ACTIVE;
+            return this;
         }
 
         reverse():void {
@@ -181,11 +185,13 @@ export module ft {
             return this;
         }
 
-        stop():void {
+        stop():Timer {
             this.state = TimerState.NONE;
+            return this;
         }
 
         execute():void {
+
             var task = this.tasks[this.taskIndex],
                 successFunction,
                 errorFunction,

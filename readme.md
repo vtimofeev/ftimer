@@ -1,10 +1,11 @@
 # FTIMER 0.1.0 
 ## Advanced Timer which has excited API. 
+
 ### Look at TypeScript definitions `./src/ft/timer.d.ts` to get details.
-### It has no dependencies (only test).
+### Size 4Kb
+### Has no dependencies
 
 ## Using with NodeJS:
-
 
 ```
 var ftimer = require('ftimer').ftimer; // get default timer factory/manager
@@ -31,8 +32,21 @@ timer50.then(decrementPromise); // you can `async` add task to execute function
            
 ```
 
-## Using with browser
+## Using with Browser(ES5 required):
 
 ```
 
+<script src="../build/ftimer.min.js"></script>
+
+<script>
+var t0 = ftimer.get()
+    .delay(1000)
+    .then(function() { $(document.body).html('<h1>FTimer 0.1.0'</h1>); })
+    .stop(); 
+
+t0.start();
+</script>
+
 ```
+
+Demo `./examples/jquery-loop-text.html` 

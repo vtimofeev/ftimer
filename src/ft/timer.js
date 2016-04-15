@@ -1,3 +1,5 @@
+if (typeof exports === 'undefined')
+    var exports = window || {};
 var ft;
 (function (ft) {
     var TimerState = {
@@ -134,6 +136,7 @@ var ft;
         };
         Timer.prototype.start = function () {
             this.state = TimerState.ACTIVE;
+            return this;
         };
         Timer.prototype.reverse = function () {
             this.forward = false;
@@ -151,6 +154,7 @@ var ft;
         };
         Timer.prototype.stop = function () {
             this.state = TimerState.NONE;
+            return this;
         };
         Timer.prototype.execute = function () {
             var task = this.tasks[this.taskIndex], successFunction, errorFunction, isFnc, fncResult;

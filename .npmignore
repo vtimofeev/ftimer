@@ -1,0 +1,7 @@
+/.idea
+/typings
+node*
+/test
+tsd.json
+/src/ft/timer.d/ts
+/examples

@@ -1,6 +1,6 @@
 {
   "name": "ftimer",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "NodeJS/Browser advanced timer",
   "main": "ftimer.js",
   "directories": {
@@ -31,6 +31,9 @@
   "homepage": "https://github.com/vtimofeev/ftimer#readme",
   "devDependencies": {
     "chai": "^3.4.1",
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.5.3",
     "mocha": "^2.3.4"
   }
 }
