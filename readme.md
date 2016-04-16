@@ -1,7 +1,9 @@
-# FTIMER 0.1.0 
-## Advanced Timer which has excited API. 
+# ftimer 0.1.2 - JavaScript advanced timer  
 
-### Look at TypeScript definitions `./src/ft/timer.d.ts` to get details.
+### Has typescript definitions `./src/ft/timer.d.ts`.
+### Promises support
+### Direction support 
+### Start/stop support
 ### Size 4Kb
 ### Has no dependencies
 
